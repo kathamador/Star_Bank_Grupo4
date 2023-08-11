@@ -7,3 +7,6 @@
 - Enrrique Antonio Pacheco Chinchilla - 201410010464
 - Oscar Joel Gomez Castillo - 201720110022
 - Gleen Alexis Pineda Moreno - 202010110177
+
+Enlace apk: 
+https://mega.nz/file/cMVXhIba#NZ8ILo0jY__aab1oXW8R8Hwg2vknkOzJHatvPIPjtRY
