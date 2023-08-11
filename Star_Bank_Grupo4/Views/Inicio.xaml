@@ -1,0 +1,57 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Star_Bank_Grupo4.Views.Inicio"
+             BackgroundColor="#F1F1F1">
+    <NavigationPage.TitleIconImageSource>
+        <!-- Ruta de la imagen en la carpeta de recursos del proyecto -->
+        <OnPlatform x:TypeArguments="ImageSource">
+            <On Platform="Android" Value="logoi.png"/>
+        </OnPlatform>
+    </NavigationPage.TitleIconImageSource>
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Label Text="{Binding CorreoUsuario}" x:Name="txtcorreo" FontSize="12" IsVisible="false"/>
+            <StackLayout Margin="0,10,0,5">
+                <Frame  CornerRadius="10">
+                    <StackLayout Orientation="Horizontal" Margin="0,15,0,0">
+                        <Image  Source="dolar.png" HeightRequest="80" WidthRequest="80" Margin="10,0,10,70"/>
+                        <StackLayout Margin="5,0,0,0">
+                            <Label Text="Cuenta de Ahorro" FontSize="18" FontAttributes="Bold" Margin="10,0,0,0"/>
+                            <Label Text="" x:Name="txtcuenta" FontSize="16" Margin="10,0,0,10" FontAttributes="Bold" TextColor="#bababa"/>
+                            <Label Text="Saldo Disponible" FontSize="16" Margin="8,0,0,0" FontAttributes="Bold"/>
+                            <Label Text=" " x:Name="txtsaldo" FontSize="30" TextColor="#921939" FontAttributes="Bold"  Margin="5,0,0,0"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Margin="0,10,0,0">
+                <Frame CornerRadius="10"
+                        Padding="0">
+                    <StackLayout >
+                        <Image
+                            Source="prox.png"
+                            HeightRequest="160"
+                            Aspect="AspectFill"/>
+                    </StackLayout>
+                    
+                </Frame>
+            </StackLayout>
+            <StackLayout Margin="0,8,0,0">
+                <Frame CornerRadius="10"
+                       Padding="0">
+                    <CarouselView x:Name="Carousel"
+                            HeightRequest="200">
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Image Source="{ Binding item}" Aspect="AspectFill"/>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Star_Bank_Grupo4.Views.ConfirmacionPago"
+             xmlns:renderers="clr-namespace:Star_Bank_Grupo4.Renderers"
+             BackgroundColor="#F1F1F1">
+    <NavigationPage.TitleView>
+        <Label Text="Confirmación de Pago" TextTransform="None"  VerticalOptions="CenterAndExpand" Margin="40,0,0,0" TextColor="White" FontAttributes="Bold" FontSize="18"/>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="20">
+            <Label Text="Detalle de pago" TextColor="DarkRed" FontSize="18" Margin="2,0,0,0" FontAttributes="Bold"/>
+            <Frame BorderColor="Transparent" CornerRadius="4">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Debitar de:" FontSize="18" TextColor="Black" VerticalOptions="CenterAndExpand"/>
+                    <renderers:PancakeView
+                        HorizontalOptions="EndAndExpand">
+                        <StackLayout Orientation="Horizontal">
+                            <renderers:BorderlessEntry
+                            x:Name="nombreC"
+                            TextTransform="None"
+                            FontSize="18"
+                            IsEnabled="False" 
+                            TextColor="Black" />
+                        </StackLayout>
+                    </renderers:PancakeView>
+                </StackLayout>
+            </Frame>
+
+            <Frame BorderColor="Transparent" CornerRadius="4">
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Proveedor:" FontSize="18"  TextColor="Black" VerticalOptions="CenterAndExpand"/>
+                    <renderers:PancakeView
+                        HorizontalOptions="EndAndExpand">
+                        <StackLayout Orientation="Horizontal">
+                            <renderers:BorderlessEntry
+                            x:Name="descripcion"
+                            TextTransform="None"
+                            FontSize="18"
+                            IsEnabled="False" 
+                            TextColor="Black" />
+                        </StackLayout>
+                    </renderers:PancakeView>
+                </StackLayout>
+            </Frame>
+
+            <Frame BorderColor="Transparent" CornerRadius="4">
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Codigo de servicio:" FontSize="18" TextColor="Black" VerticalOptions="CenterAndExpand"/>
+                    <renderers:PancakeView
+                        HorizontalOptions="EndAndExpand">
+                        <StackLayout Orientation="Horizontal">
+                            <renderers:BorderlessEntry
+                            x:Name="cuentaServicio"
+
+                            TextTransform="Uppercase"
+                            FontSize="18"
+                            IsEnabled="False" 
+                            TextColor="Black" />
+                        </StackLayout>
+                    </renderers:PancakeView>
+                </StackLayout>
+            </Frame>
+            
+            <StackLayout Spacing="10">
+                <Label Text="Total a pagar:" FontSize="18" TextColor="DarkRed" FontAttributes="Bold" Margin="2,10,0,0" />
+                <renderers:PancakeView
+                    Padding="15,0,10,0"
+                    BackgroundColor="#E8E6E6"
+                    BorderColor="LightGray"
+                    CornerRadius="4"
+                    HeightRequest="52">
+                    <StackLayout Orientation="Horizontal">
+                        <renderers:BorderlessEntry
+                            x:Name="totalS"
+                            TextTransform="Uppercase"
+                            FontSize="18"
+                            IsEnabled="False" 
+                            TextColor="black" />
+                    </StackLayout>
+                </renderers:PancakeView>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Margin="0,30,0,0" VerticalOptions="EndAndExpand">
+                <renderers:PancakeView
+                                Padding="15,0,10,0"
+                                BackgroundColor="#921939"
+                                CornerRadius="25"
+                                Elevation="0"
+                                HeightRequest="50">
+                    <Button
+                                    x:Name="Pagar"
+                                    Clicked="Pagar_Clicked"
+                                    FontAttributes="Bold"
+                                    FontSize="18"
+                                    BackgroundColor="Transparent"
+                                    HeightRequest="50"
+                                    Style="{StaticResource NormaleLabel}"
+                                    Text="Pagar Servicio"
+                                    TextTransform="None"
+                                    TextColor="White"/>
+                </renderers:PancakeView>
+                <renderers:PancakeView
+                                Padding="15,0,10,0"
+                                CornerRadius="25"
+                                Elevation="0"
+                                HeightRequest="50">
+                    <Button
+                                    x:Name="cancelar"
+                                    Clicked="cancelar_Clicked"
+                                    FontAttributes="Bold"
+                                    FontSize="18"
+                                    BackgroundColor="Transparent"
+                                    HeightRequest="50"
+                                    Style="{StaticResource NormaleLabel}"
+                                    Text="Cancelar"
+                                    TextTransform="None"
+                                    TextColor="#921939" />
+                </renderers:PancakeView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

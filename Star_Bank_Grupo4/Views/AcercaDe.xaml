@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Star_Bank_Grupo4.Views.AcercaDe"
+             BackgroundColor="#F1F1F1">
+    <NavigationPage.TitleView>
+        <Label Text="Acerca de" TextTransform="None"  VerticalOptions="CenterAndExpand" Margin="90,0,0,0" TextColor="White" FontAttributes="Bold" FontSize="18"/>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#93172D" 
+                   CornerRadius="20" 
+                   HasShadow="True"
+                   Margin="10,20,10,10">
+                <Image 
+                    Source="logo.png"
+                    HeightRequest="90"/>
+            </Frame>
+
+            <Frame CornerRadius="20"
+                   Margin="10,10,10,10">
+                <StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <Image
+                            Source="mision.png"
+                            HeightRequest="40"/>
+                        <!-- Misión de Star Bank -->
+                        <Label Text="Misión de Star Bank"
+               FontSize="18"
+               Margin="20,5,20,0"
+               TextColor="black"
+               HorizontalOptions="CenterAndExpand"
+                       FontAttributes="Bold"/>
+                    </StackLayout>
+
+
+                    <StackLayout>
+                <Label Text="Facilitar tu vida financiera con tecnología innovadora y servicios de calidad, para que alcances tus metas y sueños de manera segura y eficiente."
+               FontSize="16"
+                       TextColor="Black"
+               Margin="5,0,5,5"
+               HorizontalOptions="CenterAndExpand"
+                       HorizontalTextAlignment="Center"/>
+
+                    </StackLayout>
+
+                </StackLayout>
+            </Frame>
+
+            <Frame CornerRadius="20"
+                   Margin="10,0,10,10">
+                <StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <Image
+                            Source="vision.png"
+                            HeightRequest="40"/>
+                        <!-- Visión de Star Bank -->
+                        <Label Text="Visión de Star Bank"
+               FontSize="18"
+                TextColor="Black"
+               Margin="20,5,20,0"
+               HorizontalOptions="CenterAndExpand"
+                       FontAttributes="Bold" />
+                    </StackLayout>
+
+                    <StackLayout>
+                <Label Text="Ser la aplicación líder en servicios bancarios digitales, brindando soluciones inteligentes que empoderen a nuestros usuarios y transformen la experiencia bancaria."
+               FontSize="16"
+             TextColor="Black"
+               Margin="5,0,5,5"
+               HorizontalOptions="CenterAndExpand"
+                       HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                </StackLayout>
+
+            </Frame>
+
+            <StackLayout Margin="0,10,0,0">
+                <!-- Contenido de tu página principal -->
+
+                <!-- Pie de página -->
+                <Label Text="Versión 1.0 © 2023 Star Bank"
+               FontSize="14"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="EndAndExpand" />
+            </StackLayout>
+        </StackLayout>
+        
+
+    </ContentPage.Content>
+</ContentPage>

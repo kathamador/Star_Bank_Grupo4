@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Star_Bank_Grupo4.Views.PageMain"
+               xmlns:CI="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
+    <MasterDetailPage.Master>
+        <ContentPage Title="masterPage">
+            <Grid BackgroundColor="Transparent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Image Source="fondoo.jpeg" Aspect="AspectFill" WidthRequest="200"/>
+                    <StackLayout Padding="0,10,0,0" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
+                        <CI:CircleImage  x:Name="foto"  Source="usuario.png" WidthRequest="70" Aspect="AspectFit" Margin="0,15,40,0"/>
+                        <Label x:Name="nombre" TextColor="White" FontSize="16" FontAttributes="Bold" HorizontalTextAlignment="Start" Text="{Binding NombreUsuario}" Margin="20,15,0,0" />
+                        <Label x:Name="correo"  TextColor="White" FontSize="Small" HorizontalTextAlignment="Start" Text="{Binding CorreoUsuario}" Margin="20,0,0,0" />
+                    </StackLayout>
+                </Grid>
+                <StackLayout Margin="0,0,0,0" Grid.Row="1" Spacing="0">
+                    <ListView x:Name="listPageMain" ItemSelected="OnListItemSelected" BackgroundColor="White" SeparatorColor="Gray">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ImageCell TextColor="#921939" DetailColor="Gray"
+                                            Text="{Binding title}"
+                                            Detail="{Binding detail}"
+                                            ImageSource="{Binding image}">
+                                </ImageCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Grid>
+        </ContentPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>

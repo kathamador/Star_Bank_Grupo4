@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Star_Bank_Grupo4.Views.Servicio"
+             xmlns:renderers="clr-namespace:Star_Bank_Grupo4.Renderers"
+            >
+    <NavigationPage.TitleView>
+        <Label Text="Servicios" TextTransform="None"  VerticalOptions="CenterAndExpand" Margin="95,0,0,0" TextColor="White" FontAttributes="Bold" FontSize="18"/>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <StackLayout Margin="0,0,0,5">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,20,0,15">
+                    <Image Source="pagosservicios.png" WidthRequest="24" HeightRequest="24" VerticalOptions="Center" />
+                    <Label Text="Servicios" FontAttributes="Bold" TextColor="#921939" VerticalOptions="Center" />
+                </StackLayout>
+                <ListView x:Name="listViewServicios"
+                  ItemsSource="{Binding Servicios}" ItemTapped="ListViewServicios_ItemTapped" Margin="10,-10,10,-180" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="1">
+                                    <Frame>
+                                        <StackLayout Orientation="Horizontal">
+                                            <StackLayout>
+                                                <Label
+                                        VerticalOptions="CenterAndExpand"
+                                        Text="{Binding descripcion}"
+                                        TextColor="Black"
+                                         >
+                                                </Label>
+                                            </StackLayout>
+                                            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
+                                                <Image
+                                                Source="next.png"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Frame>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,20,0,15">
+                    <Image Source="calendario.png" WidthRequest="24" HeightRequest="24" VerticalOptions="Center" />
+                    <Label Text="Eventos" FontAttributes="Bold" TextColor="#921939" VerticalOptions="Center" />
+                </StackLayout>
+                <ListView x:Name="listViewEventos"
+                  ItemsSource="{Binding Eventos}" ItemTapped="ListViewEventos_ItemTapped" Margin="10,0,10,0" BackgroundColor="Transparent" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="1">
+                                    <Frame>
+                                        <StackLayout Orientation="Horizontal">
+                                            <StackLayout>
+                                                <Label
+                                                    >
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="{Binding descripcion}" 
+                                                                  TextColor="Black"/>
+                                                            <Span Text=" - " />
+                                                            <Span Text="{Binding costo_boleto}"
+                                                                  TextColor="Black"/>
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+                                            </StackLayout>
+                                            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
+                                                <Image
+                                                Source="next.png"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Frame>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

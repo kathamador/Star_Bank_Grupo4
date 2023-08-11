@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             x:Class="Star_Bank_Grupo4.Views.Reportes"
+             BackgroundColor="#F1F1F1">
+    <NavigationPage.TitleView>
+        <Label Text="Control Presupuestario" TextTransform="None"  VerticalOptions="CenterAndExpand" Margin="40,0,0,0" TextColor="White" FontAttributes="Bold" FontSize="18"/>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout x:Name="graficos" Padding="15">
+            <StackLayout Margin="0,0,0,5">
+                <Frame CornerRadius="10">
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout Margin="5,0,0,0">
+                            <Label x:Name="txtcuenta"
+                               FontSize="14"
+                               TextColor="Gray"
+                               FontAttributes="Bold"
+                               />
+                            <Label x:Name="nombre"
+                               TextColor="Gray"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               />
+                            <Label x:Name="saldo"
+                               TextColor="#921939"
+                               FontSize="15"
+                               FontAttributes="Bold"
+                               />
+
+                            <Label Text="Saldo Disponible"
+                               TextColor="Gray"
+                               FontSize="11"
+                               />
+                        </StackLayout>
+
+                        <Image
+                            Source="grafico.png"
+                            HorizontalOptions="EndAndExpand"
+                            Margin="0,0,20,0"
+                            HeightRequest="80"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+            <Frame HeightRequest="600" CornerRadius="10">
+                <StackLayout>
+                    <ImageButton Source="menu.png"  BackgroundColor="LightSkyBlue" HorizontalOptions="EndAndExpand" Padding="10" Clicked="btn_image_Clicked" CornerRadius="5" Margin="0,0,0,20"/>
+                    <microcharts:ChartView x:Name="charView" VerticalOptions="FillAndExpand" FlowDirection="LeftToRight" />
+                </StackLayout>
+
+            </Frame>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

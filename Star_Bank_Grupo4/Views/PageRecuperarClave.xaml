@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Star_Bank_Grupo4.Views.PageRecuperarClave"
+             xmlns:renderers="clr-namespace:Star_Bank_Grupo4.Renderers"
+             BackgroundColor="#F1F1F1">
+    <NavigationPage.TitleView>
+        <Label Text="Recuperar Clave" TextTransform="None"  VerticalOptions="CenterAndExpand" Margin="60,0,0,0" TextColor="White" FontAttributes="Bold" FontSize="18"/>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout Margin="0,20,0,0">
+            <!--<Label Text="Contraseña temporal: " />
+            <Entry x:Name="contrasenaTemp" />-->
+            <Label Text="Contraseña nueva: " Margin="20,40,15,10" FontAttributes="Bold" />
+            <renderers:PancakeView
+                                Margin="15,0,15,0" 
+                                Padding="15,0,10,0"
+                                BackgroundColor="White"
+                                BorderColor="LightGray"
+                                BorderThickness="2"
+                                CornerRadius="25"
+                                HeightRequest="50">
+                <StackLayout Orientation="Vertical" Spacing="15" Margin="0,10,0,0">
+                    <Entry x:Name="contrasenaNueva" IsPassword="True" />
+                </StackLayout>
+            </renderers:PancakeView>
+            <Label Text="Confirmar contraseña: " Margin="20,20,15,10" FontAttributes="Bold"  />
+            <renderers:PancakeView
+                                Margin="15,0,15,0" 
+                                Padding="15,0,10,0"
+                                BackgroundColor="White"
+                                BorderColor="LightGray"
+                                BorderThickness="2"
+                                CornerRadius="25"
+                                HeightRequest="50">
+                <StackLayout Orientation="Vertical" Spacing="15" Margin="0,10,0,0">
+                    <Entry x:Name="confirmarcontrasena"  IsPassword="True"/>
+
+                </StackLayout>
+            </renderers:PancakeView>
+            <renderers:PancakeView
+                                Margin="15,20,15,0"
+                                Padding="15,0,10,0"
+                                BackgroundColor="#921939"
+                                CornerRadius="25"
+                                Elevation="0"
+                                HeightRequest="50"
+                                HorizontalOptions="FillAndExpand">
+                <Button
+                                    Margin="15,0,15,0"
+                                    x:Name="btnRecuperarClave"
+                                    Clicked="btnRecuperarClave_Clicked"
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    BackgroundColor="Transparent"
+                                    HeightRequest="50"
+                                    HorizontalOptions="FillAndExpand"
+                                    Style="{StaticResource NormaleLabel}"
+                                    Text="Enviar"
+                                    TextTransform="None"
+                                    TextColor="White"
+                                    VerticalOptions="CenterAndExpand" />
+            </renderers:PancakeView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

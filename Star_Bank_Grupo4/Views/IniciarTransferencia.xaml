@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Star_Bank_Grupo4.Views.IniciarTransferencia"
+             xmlns:renderers="clr-namespace:Star_Bank_Grupo4.Renderers"
+             BackgroundColor="#F1F1F1">
+    <NavigationPage.TitleView>
+        <Label Text="Transferencias" TextTransform="None" HorizontalOptions="CenterAndExpand" Margin="0,0,70,0" TextColor="White" FontAttributes="Bold" FontSize="20"/>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="FillAndExpand" Padding="22, 26">
+                <Label Text="Cuenta de origen" FontAttributes="Bold" FontSize="18"/>
+                <renderers:PancakeView
+                    Margin="0,10,0,0"
+                    Padding="15,0,10,0"
+                    BackgroundColor="White"
+                    BorderColor="LightGray"
+                    CornerRadius="4"
+                    HeightRequest="52">
+                    <StackLayout Orientation="Horizontal">
+                        <renderers:BorderlessEntry
+                            Text="{Binding Path=CuentaOrigenSeleccionada.Cuenta}"
+                            FontAttributes="Bold"
+                            TextTransform="Uppercase"
+                            FontSize="18"
+                            IsEnabled="False" 
+                            TextColor="Gray" />
+                    </StackLayout>
+                </renderers:PancakeView>
+                <Label Text="Cuenta destino" FontAttributes="Bold" FontSize="18" />
+                <renderers:PancakeView
+                    Margin="0,10,0,0"
+                    Padding="15,0,10,0"
+                    BackgroundColor="White"
+                    BorderColor="LightGray"
+                    CornerRadius="4"
+                    HeightRequest="52">
+                    <StackLayout Orientation="Horizontal">
+                        <renderers:BorderlessEntry
+                           TextTransform="Uppercase"
+                           HorizontalOptions="FillAndExpand"
+                           FontSize="18"
+                           Text="{Binding Path=NumeroCuentaDestino}"
+                           TextChanged="FCuentaDestino_TextChanged"
+                           Placeholder="Ingrese el número de cuenta destino"
+                           Keyboard="Numeric"
+                           TextColor="Gray" />
+                    </StackLayout>
+                </renderers:PancakeView>
+                <Label Text="Monto a transferir" FontAttributes="Bold" FontSize="18" />
+                <renderers:PancakeView
+                    Margin="0,10,0,0"
+                    Padding="15,0,10,0"
+                    BackgroundColor="White"
+                    BorderColor="LightGray"
+                    CornerRadius="4"
+                    HeightRequest="52">
+                    <StackLayout Orientation="Horizontal">
+                        <renderers:BorderlessEntry
+                            TextTransform="Uppercase"
+                           HorizontalOptions="FillAndExpand"
+                           FontSize="18"
+                           Text="{Binding Path=Monto}"
+                           TextChanged="FMonto_TextChanged"
+                           Unfocused="FMonto_Unfocused"
+                           Placeholder="Ingrese el monto a transferir"
+                           Keyboard="Numeric"
+                           TextColor="Gray" />
+                    </StackLayout>
+                </renderers:PancakeView>
+                <Label Text="Comentarios" FontAttributes="Bold" FontSize="18"/>
+                <renderers:PancakeView
+                    Margin="0,10,0,0"
+                    Padding="15,0,10,0"
+                    BackgroundColor="White"
+                    BorderColor="LightGray"
+                    CornerRadius="4"
+                    HeightRequest="100">
+                    <StackLayout Orientation="Vertical">
+                        <Editor 
+                    Margin="0,10,0,0"
+                    Text="{Binding Path=Comentario}"
+                    HeightRequest="100" Placeholder="(Opcional) Ingrese un comentario"
+                    TextColor="Gray"/>
+                    </StackLayout>
+                </renderers:PancakeView>
+                <renderers:PancakeView
+                                VerticalOptions="EndAndExpand"
+                                Padding="15,0,10,0"
+                                BackgroundColor="#921939"
+                                CornerRadius="25"
+                                Elevation="0"
+                                HeightRequest="50"
+                                HorizontalOptions="FillAndExpand">
+                    <Button
+                                    x:Name="btnirResumen"
+                                    Clicked="btnirResumen_Clicked"  
+                                    FontAttributes="Bold"
+                                    FontSize="18"
+                                    BackgroundColor="Transparent"
+                                    HeightRequest="50"
+                                    HorizontalOptions="FillAndExpand"
+                                    Style="{StaticResource NormaleLabel}"
+                                    Text="Continuar     (1/2)"
+                                    TextTransform="None"
+                                    TextColor="White"
+                                    VerticalOptions="CenterAndExpand" />
+                </renderers:PancakeView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

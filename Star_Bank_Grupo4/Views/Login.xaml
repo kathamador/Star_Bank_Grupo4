@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Views:baseView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Star_Bank_Grupo4.Views.Login"
+             xmlns:Views="clr-namespace:Star_Bank_Grupo4.Views"
+             xmlns:renderers="clr-namespace:Star_Bank_Grupo4.Renderers">
+    <Grid>
+        <Image Aspect="AspectFill" Source="fondo.png" />
+
+        <ScrollView>
+            <StackLayout
+                Margin="40,0,40,20"
+                Spacing="60"
+                VerticalOptions="CenterAndExpand">
+                <Image
+                    x:Name="Logo"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource ImageStyle}"
+                    VerticalOptions="Center" />
+                <Grid x:Name="LoginGrid">
+                    <renderers:PancakeView
+                    x:Name="LoginLayoput"
+                    BackgroundColor="White"
+                    CornerRadius="20"
+                    HeightRequest="350"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+                        <StackLayout Padding="20" Spacing="15">
+                            <renderers:PancakeView
+                            BackgroundColor="#F1F1F1"
+                            CornerRadius="18"
+                            HeightRequest="36"
+                            HorizontalOptions="CenterAndExpand"
+                            WidthRequest="150">
+                                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                                    <renderers:PancakeView
+                                    x:Name="SignInPancake"
+                                     BackgroundColor="#B22E41"
+                                    CornerRadius="18"
+                                    HeightRequest="36"
+                                    HorizontalOptions="FillAndExpand"
+                                    WidthRequest="75">
+                                        <renderers:PancakeView.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="SigninClick" />
+                                        </renderers:PancakeView.GestureRecognizers>
+                                        <Label
+                                        x:Name="SignInLabel"
+                                        Margin="8"
+                                        FontSize="14"
+                                        HorizontalOptions="FillAndExpand"
+                                        Text="Login"
+                                        TextColor="White"
+                                        
+                                        VerticalOptions="CenterAndExpand" />
+                                    </renderers:PancakeView>
+
+                                    <renderers:PancakeView
+                                    x:Name="SignUpPancake"
+                                   BackgroundColor="#F1F1F1"
+                                    CornerRadius="18"
+                                    HeightRequest="36"
+                                    HorizontalOptions="FillAndExpand"
+                                    WidthRequest="75">
+                                        <renderers:PancakeView.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="SignupClick" />
+                                        </renderers:PancakeView.GestureRecognizers>
+                                        <Label
+                                        x:Name="Signup_label"
+                                        Margin="8"
+                                        FontSize="14"
+                                        HorizontalOptions="FillAndExpand"
+                                        Text="Sign up"
+                                        TextColor="#C6C7C8"
+                                        VerticalOptions="CenterAndExpand" />
+                                    </renderers:PancakeView>
+
+                                </StackLayout>
+                            </renderers:PancakeView>
+                            <StackLayout x:Name="EmailandPassLayout" Spacing="15">
+                                <renderers:PancakeView
+                                Padding="15,0,10,0"
+                                BackgroundColor="White"
+                                BorderColor="LightGray"
+                                BorderThickness="2"
+                                CornerRadius="25"
+                                HeightRequest="50">
+                                    <StackLayout Orientation="Horizontal" Spacing="15">
+                                        <Image
+                                         Source="email.png"/>
+                                        <renderers:BorderlessEntry
+                                        x:Name="correo"
+                                        FontAttributes="None"
+                                        FontSize="13"
+                                        HorizontalOptions="FillAndExpand"
+                                        IsPassword="False"
+                                        Placeholder="Correo Electronico"
+                                        PlaceholderColor="#bababa"
+                                        TextColor="Black" />
+                                    </StackLayout>
+                                </renderers:PancakeView>
+                                <renderers:PancakeView
+                                Padding="15,0,10,0"
+                                BackgroundColor="White"
+                                BorderColor="LightGray"
+                                BorderThickness="2"
+                                CornerRadius="25"
+                                HeightRequest="50">
+                                    <StackLayout Orientation="Horizontal" Spacing="15">
+                                        <Image
+                                         Source="pass.png"/>
+                                        <renderers:BorderlessEntry
+                                        x:Name="contrasena"
+                                        FontAttributes="None"
+                                        FontSize="14"
+                                        IsPassword="True"
+                                        HorizontalOptions="FillAndExpand"
+                                        Placeholder="Contraseña"
+                                        PlaceholderColor="#bababa"
+                                        TextColor="Black" />
+                                    </StackLayout>
+                                </renderers:PancakeView>
+                                <Button
+                                x:Name="btnRecuperarPass"
+                                Clicked="btnRecuperarPass_Clicked"
+                                FontSize="12"
+                                BackgroundColor="Transparent"
+                                TextTransform="None"
+                                HorizontalOptions="CenterAndExpand"
+                                TextColor="#8A9EAD"
+                                VerticalOptions="End"
+                                Text="¿Olvidó su contraseña? &#10;"/>
+                                <renderers:PancakeView
+                                Padding="15,0,10,0"
+                                BackgroundColor="#921939"
+                                CornerRadius="25"
+                                Elevation="0"
+                                HeightRequest="50"
+                                HorizontalOptions="FillAndExpand">
+                                    <Button
+                                    x:Name="Ingresar"
+                                    Clicked="Ingresar_Clicked_1"  
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    BackgroundColor="Transparent"
+                                    HeightRequest="50"
+                                    HorizontalOptions="FillAndExpand"
+                                    Style="{StaticResource NormaleLabel}"
+                                    Text="Ingresar"
+                                    TextTransform="None"
+                                    TextColor="White"
+                                    VerticalOptions="CenterAndExpand" />
+                                </renderers:PancakeView>
+                            </StackLayout>
+
+                        </StackLayout>
+                    </renderers:PancakeView>
+                </Grid>
+
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</Views:baseView>
